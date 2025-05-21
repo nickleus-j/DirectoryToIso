@@ -31,7 +31,7 @@ namespace DirectoryToIso
             foreach (FileInfo file in folder.GetFiles())
             {
                 string fileFullPath = file.FullName;
-                string fileOnIso = fileFullPath.TrimStart(home.FullName.ToCharArray());
+                string fileOnIso = folder.FullName.TrimStart(home.FullName.ToCharArray()) + file.Name;
                 output.Add(fileOnIso, file.FullName);
             }
 
