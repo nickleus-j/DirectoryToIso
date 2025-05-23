@@ -17,7 +17,7 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Directory" Grid.Column="0" Grid.Row="0" FontFamily="High Tower Text" FontSize="16"  Margin="0,0,0,163" />
+        <TextBlock Text="Directory" Grid.Column="0" Grid.Row="0" FontFamily="High Tower Text" FontSize="16" />
         <TextBox x:Name="DirectoryBox" Grid.Column="1" Grid.Row="0" IsReadOnly="True" FontSize="18" MaxHeight="120" VerticalAlignment="Top" BorderBrush="#FF465A47" BorderThickness="2"/>
         <Button Grid.Column="2" Grid.Row="0" Content="Select Directory" x:Name="DirectoryBtn" Click="DirectoryBtn_Click" />
         <TextBlock Text="Iso Destination" Grid.Column="0" Grid.Row="1" FontFamily="High Tower Text" FontSize="16" />
