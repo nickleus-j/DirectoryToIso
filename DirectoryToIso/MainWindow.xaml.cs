@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using DiscUtils.Iso9660;
+using Microsoft.Win32;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -9,8 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DiscUtils.Iso9660;
-using Microsoft.Win32;
+using System.Windows.Threading;
 
 namespace DirectoryToIso
 {
@@ -109,11 +110,17 @@ namespace DirectoryToIso
             if (Directory.Exists(DirectoryBox.Text))
             {
                 DirectoryInfo chosenDirectory = new DirectoryInfo(DirectoryBox.Text);
-                int buildResult = BuildIso(chosenDirectory, IsoLocation.Text);
-                if (buildResult == 0)
+                Dispatcher dispatcher = Application.Current.Dispatcher;
+                dispatcher.BeginInvoke(new Action(() =>
                 {
-                    MessageBox.Show("ISO written sucessfully!");
-                }
+                    // Update the UI
+                    int buildResult = BuildIso(chosenDirectory, IsoLocation.Text);
+                    if (buildResult == 0)
+                    {
+                        MessageBox.Show("ISO written sucessfully!");
+                    }
+                }));
+                
 
 
             }

@@ -13,16 +13,16 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition MaxWidth="120" Width="2*"></ColumnDefinition>
+            <ColumnDefinition MaxWidth="150" Width="2*"></ColumnDefinition>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Directory" Grid.Column="0" Grid.Row="0" FontFamily="High Tower Text" FontSize="16" />
-        <TextBox x:Name="DirectoryBox" Grid.Column="1" Grid.Row="0" IsReadOnly="True" FontSize="18" MaxHeight="120" VerticalAlignment="Top" BorderBrush="#FF465A47" BorderThickness="2"/>
-        <Button Grid.Column="2" Grid.Row="0" Content="Select Directory" x:Name="DirectoryBtn" Click="DirectoryBtn_Click" />
+        <TextBlock Text="Directory To Archive" Grid.Column="0" Grid.Row="0" FontFamily="High Tower Text" FontSize="16" />
+        <TextBox x:Name="DirectoryBox" Grid.Column="1" Grid.Row="0" IsReadOnly="True" FontSize="18" MaxHeight="150" VerticalAlignment="Top" BorderBrush="#FF465A47" BorderThickness="2" MaxLines="999"/>
+        <Button Grid.Column="2" Grid.Row="0" Content="Select Directory" x:Name="DirectoryBtn" Click="DirectoryBtn_Click"  MaxHeight="150" FontFamily="Segoe UI Black" FontSize="14"/>
         <TextBlock Text="Iso Destination" Grid.Column="0" Grid.Row="1" FontFamily="High Tower Text" FontSize="16" />
-        <TextBox x:Name="IsoLocation" Grid.Column="1" Grid.Row="1" IsReadOnly="True" FontSize="18" MaxHeight="120" VerticalAlignment="Top" BorderBrush="#FF465A47" BorderThickness="2"  />
-        <Button Grid.Column="2" Grid.Row="1" Content="Set Location" x:Name="IsoBtn" Click="IsoBtn_Click"/>
+        <TextBox x:Name="IsoLocation" Grid.Column="1" Grid.Row="1" IsReadOnly="True" FontSize="18" MaxHeight="150" VerticalAlignment="Top" BorderBrush="#FF465A47" BorderThickness="2"  MaxLines="999" />
+        <Button Grid.Column="2" Grid.Row="1" Content="Set Location" x:Name="IsoBtn" Click="IsoBtn_Click" MaxHeight="150" FontFamily="Segoe UI Black" FontSize="14"/>
         <Button Grid.Column="2" Grid.Row="2" Content="Save Iso" Click="Button_Click" FontFamily="Lato Semibold" FontSize="20"  />
     </Grid>
 </Window>
