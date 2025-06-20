@@ -1,6 +1,7 @@
 ﻿using DiscUtils.Iso9660;
 using Microsoft.Win32;
 using System.IO;
+using System.Media;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -93,7 +94,7 @@ namespace DirectoryToIso
             {
                 Filter = "Iso (*.iso)|*.iso",
                 DefaultExt = ".iso",
-                Title = "Save text file"
+                Title = "Save ISO file"
             };
             if (folderDialog.ShowDialog() == true)
             {
@@ -117,7 +118,8 @@ namespace DirectoryToIso
                     int buildResult = BuildIso(chosenDirectory, IsoLocation.Text);
                     if (buildResult == 0)
                     {
-                        MessageBox.Show("ISO written sucessfully!");
+                        SystemSounds.Beep.Play();
+                        SaveStatus.Text = "ISO written sucessfully!";
                     }
                 }));
                 
@@ -126,7 +128,8 @@ namespace DirectoryToIso
             }
             else
             {
-                MessageBox.Show("Please make sure the directory exists!");
+                SystemSounds.Exclamation.Play();
+                SaveStatus.Text = "ISO writing failed!";
             }
         }
     }
