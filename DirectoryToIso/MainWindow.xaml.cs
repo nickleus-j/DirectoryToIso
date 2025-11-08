@@ -55,9 +55,6 @@ namespace DirectoryToIso
             {
                 // Get main folder and put it into results.
                 getFileList(sourceDirectory, sourceDirectory).ToList().ForEach(file => resultList.Add(file.Key, file.Value));
-
-                
-
                 // Finally, add all files collected to the ISO.
                 foreach (KeyValuePair<string, string> pair in resultList.ToList())
                 {
@@ -68,7 +65,7 @@ namespace DirectoryToIso
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error Writing ISO. Check Permissions and Files. " + e.Message);
+                SaveStatus.Text = "Error Writing ISO. Check Permissions and Files. " + e.Message;
                 return 1;
             }
 
@@ -105,9 +102,6 @@ namespace DirectoryToIso
         {
             CDBuilder builder = new CDBuilder();
             Dictionary<string, string> resultList = new Dictionary<string, string>();
-
-
-
             if (Directory.Exists(DirectoryBox.Text))
             {
                 DirectoryInfo chosenDirectory = new DirectoryInfo(DirectoryBox.Text);
@@ -122,9 +116,6 @@ namespace DirectoryToIso
                         SaveStatus.Text = "ISO written sucessfully!";
                     }
                 }));
-                
-
-
             }
             else
             {
