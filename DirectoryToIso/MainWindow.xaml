@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DirectoryToIso"
         mc:Ignorable="d"
-        Title="Directory To Iso" Height="400" Width="800" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"
+        Title="Directory To ISO" Height="400" Width="800" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"
         FontFamily="Segoe UI" FontSize="16"
         >
     <Grid Margin="6,0,0,2" >
@@ -19,9 +19,9 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*" MaxWidth="180"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        
+        <TextBlock LineHeight="2" TextWrapping="Wrap" Grid.Column="0" Grid.Row="0" FontSize="12">Meant for putting contents of a directory to an ISO file</TextBlock>
         <StackPanel Grid.Column="1" Grid.Row="0">
-            <TextBlock Text="Directory To Archive"  />
+            <TextBlock Text="Directory To Archive in the ISO"  />
             <TextBox x:Name="DirectoryBox"  IsReadOnly="True" FontSize="18" MaxHeight="150" VerticalAlignment="Top" BorderBrush="#FF465A47" BorderThickness="2" MaxLines="999"  FontFamily="Cascadia Code"/>
         </StackPanel>
         
